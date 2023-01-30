@@ -22,7 +22,7 @@ const SearchPage = ({ searchParams }: Props) => {
 
   return (
     <div>
-      <h1 className="headerTitle">Search Reslts for: {searchParams?.term}</h1>
+      <h1 className="headerTitle">Search Results for: {searchParams?.term}</h1>
       {allNews && <NewsList news={allNews} />}
     </div>
   );
