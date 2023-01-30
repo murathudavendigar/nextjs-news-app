@@ -23,13 +23,13 @@ const SearchBox = () => {
         placeholder="Search keywords..."
         value={inputData}
         onChange={(e) => setInputData(e.target.value)}
-        className="w-full h-14 rounded-sm placeholder-gray-500 text-gray-500 outline-none flex-1 bg-transparent dark:text-red-500"
+        className="w-full h-14 rounded-sm placeholder-gray-500 text-zinc-900 outline-none flex-1 bg-transparent "
       />
 
       <button
         type="submit"
         disabled={!inputData}
-        className="text-red-500 disabled:text-gray-400">
+        className="text-orange-400 font-semibold disabled:text-gray-400">
         Search
       </button>
     </form>
