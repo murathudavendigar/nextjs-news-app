@@ -11,7 +11,7 @@ const useFetchNews = () => {
 
   const getEverythingAbout = async (query: string) => {
     const { data } = await axios.get(
-      `${EVERYTHING_URL}?language=tr&q=${query}&sortBy=publishedAt&pageSize=30&apiKey=${API_KEY}`
+      `${EVERYTHING_URL}?language=en&search=${query}&limit=30&api_token=${API_KEY}`
     );
 
     setAllNews(data);
@@ -20,14 +20,14 @@ const useFetchNews = () => {
 
   const getByCategory = async (category: string | Category) => {
     const { data } = await axios.get(
-      `${TOP_HEADLINES}?country=tr&category=${category}&pageSize=30&apiKey=${API_KEY}`
+      `${TOP_HEADLINES}?language=en&categories=${category}&limit=30&api_token=${API_KEY}`
     );
     setNewsByCategory(data);
   };
 
   const getMainPageNews = async () => {
     const { data } = await axios.get(
-      `${TOP_HEADLINES}?country=tr&sortBy=popularity&apiKey=${API_KEY}`
+      `${TOP_HEADLINES}?language=en&api_token=${API_KEY}`
     );
     setMainPageNews(data);
   };

@@ -18,9 +18,9 @@ const ArticlePage = ({ searchParams }: Props) => {
   return (
     <article>
       <section className="flex flex-col lg:flex-row pb-24 px-0 lg:px-10">
-        {article.urlToImage && (
+        {article.image_url && (
           <img
-            src={article.urlToImage}
+            src={article.image_url}
             alt={article.title}
             className="h-50 max-w-md mx-auto md_max-w-lg lg:max-w-xl object-cover rounded-lg shadow-md"
           />
@@ -32,11 +32,9 @@ const ArticlePage = ({ searchParams }: Props) => {
 
           <div className="flex divide-x-2 space-x-4">
             <h2 className="font-bold">By: {article.author || "unknown"}</h2>
-            <h2 className="font-bold pl-4">
-              Source: {article.source.name || article.source.id}
-            </h2>
+            <h2 className="font-bold pl-4">Source: {article.source}</h2>
             <p className="pl-4">
-              <LiveTimestamp time={article.publishedAt} />
+              <LiveTimestamp time={article.published_at} />
             </p>
           </div>
           <p className="pt-4 mb-10">{article.description}</p>

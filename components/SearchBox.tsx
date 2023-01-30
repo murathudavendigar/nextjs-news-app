@@ -12,6 +12,7 @@ const SearchBox = () => {
     if (!inputData) return;
 
     router.push(`/search?term=${inputData}`);
+    setInputData("");
   };
 
   return (

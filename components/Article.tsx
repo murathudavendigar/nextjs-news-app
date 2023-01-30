@@ -9,9 +9,9 @@ type Props = {
 const Article = ({ article }: Props) => {
   return (
     <article className="bg-slate-100 dark:bg-slate-800 flex flex-col rounded-lg shadow-lg hover:scale-105 hover:shadow-xl hover:bg-slate-200 transition-all duration-200 ease-out">
-      {article.urlToImage && (
+      {article.image_url && (
         <img
-          src={article.urlToImage}
+          src={article.image_url}
           alt={article.title}
           className="h-56 w-full object-cover rounded-t-lg shadow-md"
         />
@@ -25,9 +25,9 @@ const Article = ({ article }: Props) => {
           </section>
 
           <footer className="text-xs text-right ml-auto flex space-x-1 pt-5 italic text-gray-400">
-            <p>{article.source.name} -</p>
+            <p>{article.source} -</p>
             <p>
-              <LiveTimestamp time={article.publishedAt} />
+              <LiveTimestamp time={article.published_at} />
             </p>
           </footer>
         </div>
