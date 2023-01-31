@@ -13,6 +13,7 @@ type Props = {
 
 const SearchPage = ({ searchParams }: Props) => {
   const { allNews, getEverythingAbout } = useFetchNews();
+  console.log(searchParams);
 
   useEffect(() => {
     if (typeof searchParams?.term === "string") {
